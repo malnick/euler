@@ -11,10 +11,21 @@ def fibSeq(n)
 			a[index]=1
 		else
 			a[index] = a[index-1] + a[index-2]   # O(n+n) 
-			if a[index] % 2 == 0
-				puts a[index]
-			end
 		end
 	end
+
+	puts "Complete Array: #{a}"
+	evens = []
+	a.each do |n|
+		if n % 2 == 0
+			evens.push(n)
+		end
+	end
+	puts "Evens: #{evens}"
+	sum = 0
+	evens.each do |num| sum += num end
+	puts "Total: #{sum}"
+
+
 end
 fibSeq(ARGV[0].to_i)
